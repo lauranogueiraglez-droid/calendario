@@ -184,6 +184,13 @@ span.caught:not(.small){width:120px}
 .it{position:absolute;left:10%;top:10%;width:80%;height:80%}
 .intro .ln{display:block;white-space:nowrap}.intro.wrap .ln{white-space:normal}
 .tools .sec{background:#5b4a8a;box-shadow:inset 3px 3px 0 #8a77c4,inset -3px -3px 0 #3a2d5e}
+.ups{display:flex;gap:14px;align-items:center;margin:0 44px 12px 0}
+.ups img{width:64px;height:64px;flex:none;border:3px solid #000;background:#6fb8ea}
+.ups h2{margin:0!important;font-size:15px!important}
+.ups .kick{margin:0 0 6px}
+.simbar{position:sticky;top:0;z-index:9;display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:#5b4a8a;border-bottom:3px solid #000;padding:8px 12px;color:#fff;font-size:20px}
+.simbar span{flex:1 1 200px}
+.simbar button{min-height:38px;font-size:9px}
 .loot{display:flex;gap:12px;align-items:center;background:#120d0a;border:3px solid #000;padding:10px 12px;margin:0 0 16px}
 .loot img{width:44px;height:44px;flex:none}
 .loot span{display:block;font:400 8px/1.5 "Press Start 2P",monospace;color:#bfb39c}
@@ -242,7 +249,7 @@ span.caught:not(.small){width:120px}
 <div class="toast" id="toast"></div>
 <input type="file" id="impFile" accept="*/*" hidden>
 
-<script type="application/json" id="data">{"to": "Izan", "from": "Laura", "intro": "Veinticuatro puertas, una para cada mañana de diciembre.\nEspero que te guste \u003c3", "year": 2026, "savedAt": 0, "sample": false, "doors": {"1": {"title": "Empezamos", "text": "Veinticuatro mañanas, veinticuatro puertas. Esta es la primera, así que solo una cosa: que diciembre te trate bonito.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "2": {"title": "Súper plan", "text": "Para cuando el frío apriete.", "photo": "", "link": "", "linkLabel": "", "vale": "Una sesión de cine. Tú eliges la película, yo invito :)", "game": "", "word": "", "code": ""}, "3": {"title": "La canción de hoy", "text": "Ponla mientras te haces el café.", "photo": "", "link": "https://www.youtube.com/results?search_query=villancicos+jazz", "linkLabel": "Escuchar", "vale": ""}, "4": {"title": "Un recuerdo", "text": "Aquella tarde en la que nos perdimos buscando el mirador y acabamos encontrando el mejor bar de la ciudad.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "5": {"title": "Lo que me gusta de ti", "text": "Que siempre te acuerdas de preguntar cómo salió aquello que te conté hace semanas.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "6": {"title": "Día festivo", "text": "Hoy no se madruga. Orden directa.", "photo": "", "link": "", "linkLabel": "", "vale": "Un desayuno en la cama"}, "7": {"title": "Película", "text": "Manta, palomitas y esta peli. Sin móviles.", "photo": "", "link": "", "linkLabel": "", "vale": "Noche de cine, tú eliges el sitio del sofá"}, "8": {"title": "Una pregunta", "text": "Si mañana pudieras despertarte en cualquier ciudad, ¿cuál sería? Respóndeme hoy.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "9": {"title": "Receta", "text": "La de las galletas de canela. Las hacemos juntas este finde.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "10": {"title": "Paseo", "text": "Abrígate.", "photo": "", "link": "", "linkLabel": "", "vale": "Un paseo para ver las luces del centro"}, "11": {"title": "Mitad de semana", "text": "Ánimo, que el miércoles ya casi está.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "12": {"title": "Otra canción", "text": "Esta me recuerda a ti, no preguntes por qué.", "photo": "", "link": "https://www.youtube.com/", "linkLabel": "Escuchar", "vale": ""}, "13": {"title": "Lista", "text": "Tres cosas que quiero hacer contigo antes de que acabe el año:\n— patinar sobre hielo\n— el mercadillo de Navidad\n— no hacer absolutamente nada un domingo", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "14": {"title": "Comodín", "text": "Hoy decides tú.", "photo": "", "link": "", "linkLabel": "", "vale": "Un sí a lo que me pidas (dentro de lo razonable)"}, "15": {"title": "Una foto", "text": "Esta foto sigue siendo mi favorita.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "16": {"title": "Carta corta", "text": "Gracias por este año. Por las llamadas largas, las risas a destiempo y por quedarte cuando era más fácil irse.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "17": {"title": "Reto", "text": "Escríbele hoy a alguien a quien hace tiempo que no le dices nada bonito.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "18": {"title": "Cena", "text": "Es hora de que te devuelva todas las que me has pagado...", "photo": "", "link": "", "linkLabel": "", "vale": "Una cena en el lugar de tu preferencia.", "game": "", "word": "", "code": ""}, "19": {"title": "Dato inútil", "text": "Los renos ven la luz ultravioleta. Ahora ya lo sabes.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "20": {"title": "Pescado", "text": "Hoy he pescado este recuerdo. Echo de menos nuestras escapadas nocturnas al mirador, especialmente aquellas después de una tarde larga de estudio. ", "photo": "", "link": "", "linkLabel": "", "vale": "", "game": "pesca", "word": "", "code": ""}, "21": {"title": "El día más corto", "text": "Hoy hay menos luz que nunca. A partir de mañana, cada día un poco más.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "22": {"title": "Lotería", "text": "Si toca, nos vamos de viaje. Si no, también.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "23": {"title": "Casi", "text": "Una puerta más.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "24": {"title": "Feliz Nochebuena", "text": "Llegaste al final. Gracias por abrir cada puerta conmigo. Que esta noche sea tranquila, rica y llena de gente bonita. Te quiero mucho.", "photo": "", "link": "", "linkLabel": "", "vale": ""}}, "sky": "auto", "sound": true, "pin": "", "games": true}</script>
+<script type="application/json" id="data">{"to": "Izan", "from": "Laura", "intro": "Veinticuatro puertas, una para cada mañana de diciembre.\nEspero que te guste \u003c3", "year": 2026, "savedAt": 0, "sample": false, "doors": {"1": {"title": "Empezamos", "text": "Veinticuatro mañanas, veinticuatro puertas. Esta es la primera, así que solo una cosa: que diciembre te trate bonito.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "2": {"title": "Súper plan", "text": "Para cuando el frío apriete.", "photo": "", "link": "", "linkLabel": "", "vale": "Una sesión de cine. Tú eliges la película, yo invito :)", "game": "", "word": "", "code": ""}, "3": {"title": "La canción de hoy", "text": "Ponla mientras te haces el café.", "photo": "", "link": "https://www.youtube.com/results?search_query=villancicos+jazz", "linkLabel": "Escuchar", "vale": ""}, "4": {"title": "Un recuerdo", "text": "Aquella tarde en la que nos perdimos buscando el mirador y acabamos encontrando el mejor bar de la ciudad.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "5": {"title": "Lo que me gusta de ti", "text": "Que siempre te acuerdas de preguntar cómo salió aquello que te conté hace semanas.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "6": {"title": "Día festivo", "text": "Hoy no se madruga. Orden directa.", "photo": "", "link": "", "linkLabel": "", "vale": "Un desayuno en la cama"}, "7": {"title": "Película", "text": "Manta, palomitas y esta peli. Sin móviles.", "photo": "", "link": "", "linkLabel": "", "vale": "Noche de cine, tú eliges el sitio del sofá"}, "8": {"title": "Una pregunta", "text": "Si mañana pudieras despertarte en cualquier ciudad, ¿cuál sería? Respóndeme hoy.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "9": {"title": "Receta", "text": "La de las galletas de canela. Las hacemos juntas este finde.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "10": {"title": "Paseo", "text": "Abrígate.", "photo": "", "link": "", "linkLabel": "", "vale": "Un paseo para ver las luces del centro"}, "11": {"title": "Mitad de semana", "text": "Ánimo, que el miércoles ya casi está.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "12": {"title": "Otra canción", "text": "Esta me recuerda a ti, no preguntes por qué.", "photo": "", "link": "https://www.youtube.com/", "linkLabel": "Escuchar", "vale": ""}, "13": {"title": "Lista", "text": "Tres cosas que quiero hacer contigo antes de que acabe el año:\n— patinar sobre hielo\n— el mercadillo de Navidad\n— no hacer absolutamente nada un domingo", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "14": {"title": "Comodín", "text": "Hoy decides tú.", "photo": "", "link": "", "linkLabel": "", "vale": "Un sí a lo que me pidas (dentro de lo razonable)"}, "15": {"title": "Una foto", "text": "Esta foto sigue siendo mi favorita.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "16": {"title": "Carta corta", "text": "Gracias por este año. Por las llamadas largas, las risas a destiempo y por quedarte cuando era más fácil irse.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "17": {"title": "Fuck USC", "text": "Espero que el examen de Elementos de probabilidad y Estadística te haya salido genial, confío en ti :)", "photo": "", "link": "", "linkLabel": "", "vale": "", "game": "", "word": "", "code": ""}, "18": {"title": "Cena", "text": "Es hora de que te devuelva todas las que me has pagado...", "photo": "", "link": "", "linkLabel": "", "vale": "Una cena en el lugar de tu preferencia.", "game": "", "word": "", "code": ""}, "19": {"title": "Dato inútil", "text": "Los renos ven la luz ultravioleta. Ahora ya lo sabes.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "20": {"title": "Pescado", "text": "Hoy he pescado este recuerdo. Echo de menos nuestras escapadas nocturnas al mirador, especialmente aquellas después de una tarde larga de estudio. ", "photo": "", "link": "", "linkLabel": "", "vale": "", "game": "pesca", "word": "", "code": ""}, "21": {"title": "El día más corto", "text": "Hoy hay menos luz que nunca. A partir de mañana, cada día un poco más.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "22": {"title": "Lotería", "text": "Si toca, nos vamos de viaje. Si no, también.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "23": {"title": "Casi", "text": "Una puerta más.", "photo": "", "link": "", "linkLabel": "", "vale": ""}, "24": {"title": "Feliz Nochebuena", "text": "Llegaste al final. Gracias por abrir cada puerta conmigo. Que esta noche sea tranquila, rica y llena de gente bonita. Te quiero mucho.", "photo": "", "link": "", "linkLabel": "", "vale": ""}}, "sky": "auto", "sound": true, "pin": "", "games": true}</script>
 <script>
 (function(){
 var SRC='<!DOCTYPE html>\n'+document.documentElement.outerHTML.replace(/^<html[^>]*>/,'<html lang="es">');
@@ -259,8 +266,10 @@ var D=(local&&(local.savedAt||0)>(EMB.savedAt||0))?local:EMB;
 if(!D.sky)D.sky='auto';if(D.sound==null)D.sound=true;
 var opened=load('adv-open',{});
 var WEB=!!(window.claude&&window.claude.use),art=null,webEdit=false;
-var mode='view',pinOK=false;
-function canEdit(){return WEB?webEdit:(!D.pin||pinOK)}
+var FINAL=true; /* true en la versión que recibe Izan: sin edición */
+var mode='view',pinOK=false,SIM={on:false,day:0,saved:null};
+function canEdit(){if(FINAL||SIM.on)return false;return WEB?webEdit:(!D.pin||pinOK)}
+function saveOpened(){if(!SIM.on)store('adv-open',opened)}
 function hash(s){var h=5381;for(var i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))|0;return 'h'+(h>>>0).toString(36)}
 
 /* ---------- texturas de píxel ---------- */
@@ -321,6 +330,17 @@ function buildPix(){
 function invCount(){var c=0;for(var i=1;i<=24;i++)if(opened[i]&&unlocked(i))c++;return c}
 function missing(){var m=[];for(var i=1;i<=23;i++)if(!opened[i])m.push(i);return m}
 function lootHTML(n,isNew){return '<div class="loot'+(isNew?' new':'')+'"><img class="pix" src="'+ITIMG[n-1]+'" alt=""><div><span>'+(isNew?'¡Nuevo objeto para el inventario!':'Objeto de este bloque')+'</span><b>'+esc(ITEMS[n-1][0])+'</b></div></div>'}
+function simStart(day){
+  if(!SIM.on){SIM.saved=opened;opened={}}
+  SIM.on=true;SIM.day=Math.max(1,Math.min(24,day));mode='view';close();render();
+  if(!$('#simbar'))document.body.insertAdjacentHTML('afterbegin','<div id="simbar" class="simbar"><span id="simtx"></span><button id="simDay">Cambiar día</button><button id="simEnd" class="primary">Salir</button></div>');
+  $('#simtx').textContent='Viéndolo como '+(D.to||'quien lo recibe')+' · hoy es '+SIM.day+' de diciembre';
+}
+function simEnd(){SIM.on=false;opened=SIM.saved||{};SIM.saved=null;var b=$('#simbar');if(b)b.remove();close();render()}
+function simAsk(){
+  openSheet('<p class="kick">Probar como '+esc(D.to||'quien lo recibe')+'</p><h2>¿Qué día quieres simular?</h2><p class="lockmsg">Verás el calendario exactamente como lo verá: sin editar, con los días bloqueados, los minijuegos y el inventario. Empieza con el inventario vacío y no cambia nada de verdad.</p><label for="simN">Día de diciembre</label><input id="simN" type="number" inputmode="numeric" min="1" max="24" value="'+(SIM.day||1)+'"><div class="row"><button class="primary" id="simGo">Empezar</button><button data-close>Cancelar</button></div>');
+  $('#simGo').onclick=function(){simStart(+$('#simN').value||1)};
+}
 function showInv(){
   var h='<p class="kick">Inventario</p><h2>'+invCount()+' / 24 objetos</h2><div class="inv">';
   for(var i=1;i<=24;i++)h+=(opened[i]&&unlocked(i))?'<div class="slot got" title="'+esc(ITEMS[i-1][0])+'"><img class="pix" src="'+ITIMG[i-1]+'" alt=""><span>'+esc(ITEMS[i-1][0])+'</span></div>':'<div class="slot'+(i===24?' last':'')+'"><b>'+i+'</b></div>';
@@ -329,7 +349,7 @@ function showInv(){
 }
 function blocked24(){
   var m=missing();
-  openSheet('<p class="kick">24 de diciembre</p><h2>Te faltan objetos</h2><p class="lockmsg">El último bloque solo se abre con los 23 objetos en el inventario. Te faltan los de '+(m.length===1?'el bloque ':'los bloques ')+m.join(', ')+'. ¡Ve a por ellos!</p><div class="row"><button class="primary" id="goInv">Ver inventario</button></div>');
+  openSheet('<p class="kick">24 de diciembre</p><h2>¡Ups! Te faltan objetos</h2><p class="lockmsg">El último bloque solo se abre con los 23 objetos en el inventario. Te faltan los de '+(m.length===1?'el bloque ':'los bloques ')+m.join(', ')+'. ¡Ve a por ellos!</p><div class="row"><button class="primary" id="goInv">Ver inventario</button></div>');
   $('#goInv').onclick=showInv;beep([140,110],'square');
 }
 
@@ -424,7 +444,7 @@ function noise(){if(!D.sound)return;try{AC=AC||new (window.AudioContext||window.
 
 /* ---------- fechas ---------- */
 function pad(n){return String(n).padStart(2,'0')}
-function todayStr(){return new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Madrid',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}
+function todayStr(){if(SIM.on)return D.year+'-12-'+pad(SIM.day);return new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Madrid',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}
 function dayStr(n){return D.year+'-12-'+pad(n)}
 function unlocked(n){return todayStr()>=dayStr(n)}
 function toUTC(s){var p=s.split('-');return Date.UTC(+p[0],p[1]-1,+p[2])}
@@ -451,7 +471,7 @@ function render(){
   else s='<b>¡Todos los bloques abiertos!</b>';
   $('#status').innerHTML=s;
   var ed=mode==='edit'&&canEdit();
-  $('#tools').innerHTML=canEdit()?'<button id="mView" class="'+(ed?'':'on')+'">Jugar</button><button id="mEdit" class="'+(ed?'on':'')+'">Editar</button><button id="bSet">Ajustes</button>'+(WEB?'':'<button id="bShare">Enviar</button>'):'';
+  $('#tools').innerHTML=canEdit()?'<button id="mView" class="'+(ed?'':'on')+'">Jugar</button><button id="mEdit" class="'+(ed?'on':'')+'">Editar</button><button id="bSet">Ajustes</button>'+(WEB?'':'<button id="bShare">Enviar</button>')+'<button id="bSim" class="sec">Probar como '+esc(D.to||'quien lo recibe')+'</button>':'';
   $('#tools').insertAdjacentHTML('beforeend','<button id="bInv" class="sec">Inventario '+invCount()+'/24</button><button id="bMus" class="sec">Música: '+(MUS.on?'sí':'no')+'</button>');
   $('#grid').innerHTML=ORDER.map(function(n){
     var d=D.doors[n]||{},u=unlocked(n),isT=t===dayStr(n),filled=d.title||d.text||d.photo||d.vale||d.link;
@@ -459,8 +479,8 @@ function render(){
     var tag=ed?(d.title||'vacío'):(isT?'¡hoy!':(u?'':''));
     return '<button class="'+cls+'" data-n="'+n+'" aria-label="Bloque '+n+'">'+ITEM+'<span class="face pix" style="background-image:url('+TEX[matOf(n)]+')"><span class="num">'+n+'</span><span class="tag">'+esc(tag)+'</span></span><span class="crack pix"></span></button>';
   }).join('');
-  $('#note').textContent=ed?'Toca un bloque para escribir lo que hay dentro.':(D.sample&&canEdit()?'Contenido de ejemplo: pulsa Editar para cambiarlo todo.':'');
-  $('#foot').innerHTML=(WEB?'':(canEdit()?'<button class="lnk" id="bImp">Importar un calendario</button>':'<button class="lnk" id="bPin">Editar (con PIN)</button>'))+
+  $('#note').textContent=(FINAL||SIM.on)?'':ed?'Toca un bloque para escribir lo que hay dentro.':(D.sample&&canEdit()?'Contenido de ejemplo: pulsa Editar para cambiarlo todo.':'');
+  $('#foot').innerHTML=(WEB||FINAL||SIM.on?'':(canEdit()?'<button class="lnk" id="bImp">Importar un calendario</button>':'<button class="lnk" id="bPin">Editar (con PIN)</button>'))+
     (!WEB&&!window.Android&&/^https?:/.test(location.protocol)?'<br><a class="lnk" href="avisos-adviento.ics">Activar los avisos de cada mañana en mi calendario</a>':'');
 }
 
@@ -476,8 +496,9 @@ function showDoor(n,draft){
   var d=draft||D.doors[n]||{},u=unlocked(n),date=n+' de diciembre';
   if(!u&&!canEdit()){
     var k=daysBetween(todayStr(),dayStr(n));
-    openSheet('<p class="kick">'+date+'</p><h2>Bloque irrompible</h2><p class="lockmsg">Este bloque se podrá picar '+(k===1?'mañana':'dentro de '+k+' días')+'. Paciencia, que merece la pena.</p>');
-    beep([140,110],'square');
+    openSheet('<div class="ups"><img class="pix" src="'+AV.head+'" alt=""><div><p class="kick">'+date+'</p><h2>¡Ups! Este día todavía no está desbloqueado</h2></div></div><p class="lockmsg">El bloque '+n+' se abre el '+date+' a las 00:00. '+(k===1?'¡Solo falta un día!':'Faltan '+k+' días.')+' Mientras tanto, pica el de hoy.</p><div class="row"><button class="primary" data-close>Vale</button></div>');
+    var up=$('.ups img');if(up){up.classList.remove('shake');void up.offsetWidth;up.classList.add('shake')}
+    beep([300,200],'square');
     return;
   }
   var isNew=u&&!draft&&!opened[n];
@@ -489,7 +510,7 @@ function showDoor(n,draft){
   if(n===24&&D.from)h+='<p class="from">— '+esc(D.from)+'</p>';
   if(!u)h+='<p class="preview">Vista previa: '+esc(D.to||'quien lo reciba')+' no podrá picarlo hasta el '+date+'.</p>';
   openSheet(h);
-  if(u&&!draft){opened[n]=1;store('adv-open',opened)}
+  if(u&&!draft){opened[n]=1;saveOpened()}
   if(isNew){beep([784,988,1319],'square');render()}
   if(n===24){burst(innerWidth/2,innerHeight*.4,['#ffd84a','#e04a3a','#4f8a2c','#ffffff','#7ec8f5'],160,14);beep([523,659,784,1047,784,1047],'square')}
 }
@@ -1113,7 +1134,7 @@ function shareCal(){
 }
 function importText(txt){
   try{var o=JSON.parse(txt),d=o&&o.app==='adviento'?o.data:null;if(!d||!d.doors||!d.year)throw 0;
-    var go=function(){D=d;D.sample=false;opened={};store('adv-open',opened);pinOK=false;mode='view';close();save('Calendario importado')};
+    var go=function(){D=d;D.sample=false;opened={};saveOpened();pinOK=false;mode='view';close();save('Calendario importado')};
     if(D.sample)go();
     else{openSheet('<p class="kick">Importar</p><h2>¿Cambiar de mundo?</h2><p class="lockmsg">Este calendario se sustituirá por el que te han enviado, «Para '+esc(d.to||'ti')+'». El actual se perderá.</p><div class="row"><button class="primary" id="imOk">Sustituir</button><button data-close>Cancelar</button></div>');$('#imOk').addEventListener('click',go)}
   }catch(e){toast('Ese archivo no es un calendario')}
@@ -1148,6 +1169,9 @@ document.addEventListener('click',function(e){
   else if(id==='bShare')shareCal();
   else if(id==='bImp')$('#impFile').click();
   else if(id==='bPin')askPin();
+  else if(id==='bSim')simAsk();
+  else if(id==='simDay')simAsk();
+  else if(id==='simEnd')simEnd();
   else if(id==='bInv')showInv();
   else if(id==='bMus')toggleMusic();
   else if(b.classList.contains('door')){
