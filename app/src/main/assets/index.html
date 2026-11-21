@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Adviento</title>
+<title>Calendario de Adviento</title>
 <meta name="theme-color" content="#1b130e">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Adviento">
+<meta name="apple-mobile-web-app-title" content="Calendario de Adviento">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
 html,body{margin:0}
 body{background:#1b130e;color:var(--txt);font:22px/1.25 VT323,ui-monospace,monospace;overflow-x:hidden}
 .pix{image-rendering:pixelated;image-rendering:crisp-edges}
-.sky{position:relative;background:linear-gradient(var(--sky1),var(--sky2));padding:28px 16px 18px;overflow:hidden}
+.sky{position:relative;background:linear-gradient(var(--sky1),var(--sky2));padding:28px 16px 92px;overflow:hidden}
 .sky .in{max-width:1000px;margin:0 auto;position:relative;z-index:1}
 h1{font:400 26px/1.35 "Press Start 2P",monospace;margin:0;color:#fff;text-shadow:3px 3px 0 #2b2b2b}
 h1 em{font-style:normal;color:var(--gold)}
@@ -61,6 +61,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px soli
 .door.locked .face{filter:brightness(.55) saturate(.7)}
 .door.today{outline:4px solid var(--gold);outline-offset:-2px;z-index:1}
 .door.today .tag{color:var(--gold)}
+.door.pending{outline:3px dashed #8cff5a;outline-offset:-2px}.door.pending .tag{color:#8cff5a}
 .door.open .face{display:none}
 .door .item{position:absolute;inset:22%;display:none}
 .door.open .item{display:block}
@@ -191,6 +192,14 @@ span.caught:not(.small){width:120px}
 .simbar{position:sticky;top:0;z-index:9;display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:#5b4a8a;border-bottom:3px solid #000;padding:8px 12px;color:#fff;font-size:20px}
 .simbar span{flex:1 1 200px}
 .simbar button{min-height:38px;font-size:9px}
+.yard{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:0;height:80px;pointer-events:none;z-index:1}
+.kid{position:absolute;left:0;bottom:0;transform-origin:center bottom;image-rendering:pixelated}
+.heart{position:absolute;bottom:56px;width:20px;height:20px;margin-left:-10px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Cpath fill='%23e04a3a' d='M1 0h2v1h2v-1h2v1h1v3h-1v1h-1v1h-1v1h-2v-1h-1v-1h-1v-1h-1v-3h1z'/%3E%3Cpath fill='%23fff' d='M1 1h1v1h-1z'/%3E%3C/svg%3E") center/contain no-repeat;animation:rise 1.1s ease-out forwards}
+@keyframes rise{0%{transform:translateY(0) scale(.5);opacity:0}20%{opacity:1;transform:translateY(-6px) scale(1.1)}100%{transform:translateY(-40px) scale(1);opacity:0}}
+.sp-yard{position:relative;width:min(320px,86vw);height:116px}
+.sp-yard .heart{bottom:84px}
+.sp-pair{display:flex;gap:22px;align-items:flex-end;justify-content:center;margin-bottom:18px}
+.sp-big.her{width:96px;height:156px}
 .loot{display:flex;gap:12px;align-items:center;background:#120d0a;border:3px solid #000;padding:10px 12px;margin:0 0 16px}
 .loot img{width:44px;height:44px;flex:none}
 .loot span{display:block;font:400 8px/1.5 "Press Start 2P",monospace;color:#bfb39c}
@@ -214,7 +223,7 @@ span.caught:not(.small){width:120px}
 .sp-pick{position:absolute;left:78px;bottom:40px;width:44px;height:44px;transform-origin:50% 100%;animation:swing .5s ease-in infinite}
 @keyframes swing{0%{transform:rotate(-55deg)}70%{transform:rotate(35deg)}100%{transform:rotate(-55deg)}}
 .sp-blk{position:absolute;left:130px;bottom:0;width:64px;height:64px;background-size:100% 100%;border:3px solid #000}
-.sp-ground{width:230px;height:24px;background-size:24px 24px;margin-bottom:22px}
+.sp-ground{width:min(320px,86vw);height:24px;background-size:24px 24px;margin-bottom:22px}
 .sp-tip{font-size:24px;color:#fff;text-shadow:2px 2px 0 #000;margin:0 0 10px;min-height:30px}
 .sp-bar{width:230px;height:22px;border:3px solid #000;background:#2a201a}
 .sp-bar i{display:block;height:100%;width:0;background:#4f8a2c;box-shadow:inset 0 3px 0 #7cc04a}
@@ -227,7 +236,7 @@ span.caught:not(.small){width:120px}
 .sp-wel .big-btn{max-width:260px}
 @media(prefers-reduced-motion:reduce){.sp-av,.sp-pick{animation:none}}
 .hero-img{image-rendering:pixelated}
-@media(min-width:640px){h1{font-size:40px}.sky{padding:48px 5vw 26px}#grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.door.big{grid-column:span 2;aspect-ratio:auto}.num{font-size:28px}.door.big .num{font-size:40px}.tag{font-size:9px}.under{padding:32px 5vw 56px}.sheet{padding:34px}}
+@media(min-width:640px){h1{font-size:40px}.sky{padding:48px 5vw 100px}#grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.door.big{grid-column:span 2;aspect-ratio:auto}.num{font-size:28px}.door.big .num{font-size:40px}.tag{font-size:9px}.under{padding:32px 5vw 56px}.sheet{padding:34px}}
 @media(prefers-reduced-motion:reduce){.flake{display:none}}
 </style>
 </head>
@@ -313,6 +322,11 @@ var AVBASE=["....HhH.HhH.H...", "..HhHHHhHHHhHH..", "..HHHhHHHHhHHH..", "..HHHHh
 var AVWAVE=["....HhH.HhH.H...", "..HhHHHhHHHhHSSS", "..HHHhHHHHhHHSSS", "..HHHHhHHhHHHSSS", "..HHSHHSSHHSHkKK", "..HHSBBSSBBSHkKK", "..HHSWESSEWSHkKK", "...HSSSssSSSHkKK", "....SSSMMSSS.kKK", "....sSSSSSSs.kKK", ".....ssSSss..kKK", "...KKKKssKKKKkKK", "kKKkKKKKKKKKkkKK", "KKKkKKLKKLKKk...", "KKKkKKKKKRRKk...", "KKKkKKKKYYYKk...", "KKKkKKKKKKKKk...", "kKKkKKKKKKKKk...", "kKKkKLLLLLLKk...", "kKKkLkKKKKkLk...", "kKKkLkKKKKkLk...", "kKKkkkkkkkkkk...", "SSSSkkkkkkkkS...", "ssssJJJjjJJJs...", "....JlJjjJlJ....", "....JJljjlJJ....", "....lJJjjJJl....", "....JJJjjJJJ....", "....JlJjjJlJ....", "....jJJjjJJj....", "....JJJjjJJJ....", "....NNNN.NNNN...", "....nnnn.nnnn..."];
 var ITPAL={"k": "#1b130e", "w": "#ffffff", "g": "#9aa3ad", "G": "#5d6670", "y": "#ffd84a", "Y": "#c9a21c", "r": "#e04a3a", "R": "#9c2a22", "n": "#8a5a2b", "N": "#5e3b1a", "e": "#4f9a2c", "E": "#2f6b2a", "b": "#49b6e6", "B": "#1f6fa8", "c": "#8af3ff", "o": "#f08a2c", "p": "#f3dfb0", "P": "#d99a5b", "v": "#c86bd8"};
 var ITEMS=[["Pico", [".gggggg.", "g.Gnn.Gg", "...nn...", "...nn...", "...nn...", "...nn...", "...NN...", "........"]], ["Gema", ["...cc...", "..cbbc..", ".cbbbbB.", "cbbcbbbB", ".bbbbbB.", "..bbbB..", "...BB...", "........"]], ["Llave", [".yyy....", "y...y...", "y...y...", ".yyyy...", "....y...", "....yy..", "....y...", "....yy.."]], ["Ovillo de lana", ["..rrrr..", ".rRrrRr.", "rrrRrrRr", "rRrrrRrr", "rrRrRrrr", ".rrRrrR.", "..rrrr..", "....rrr."]], ["Manzana", ["....n...", "...ne...", ".rrrrrr.", "rrwrrrrr", "rrrrrrrr", "rrrrrrRr", ".rrrrRR.", "..rRRR.."]], ["Galleta", [".PPPPPP.", "PppNppPP", "PpppppNP", "PNppPppP", "PpppNppP", "PppppppP", "PPpNPPPP", ".PPPPPP."]], ["Estrella", ["...yy...", "...yy...", "yyyyyyyy", ".yyyyyy.", "..yyyy..", ".yyyyyy.", ".yy..yy.", "yy....yy"]], ["Campana", ["...yy...", "..yyyy..", "..ywyy..", ".yywyyy.", ".yyyyyy.", "yyyyyyyy", "YYYYYYYY", "...yy..."]], ["Bastón de caramelo", ["..rrww..", ".w....r.", ".r....w.", "......r.", "......w.", "......r.", "......w.", "......r."]], ["Calcetín", ["..wwww..", "..rrrr..", "..rRrr..", "..rrrr..", "..rrrr..", "rrrrrr..", "rrrrrRR.", ".rrrrr.."]], ["Bola de nieve", ["........", "..wwww..", ".wwwwgw.", "wwwwwwgw", "wwwwwwgw", ".wwwwgg.", "..gggg..", "........"]], ["Vela", ["...o....", "...yo...", "...y....", "..rrrr..", "..rwrr..", "..rrrr..", "..rrrr..", ".YYYYYY."]], ["Brújula", ["..gggg..", ".gwwwwg.", "gwwrwwwg", "gwwrwwwg", "gwwwBwwg", "gwwwBwwg", ".gwwwwg.", "..gggg.."]], ["Pez", ["........", "...bbb.b", "..bbbbbb", ".bwkbbbB", "bbbbbbBb", ".bbbbbb.", "..bbb..b", "........"]], ["Zanahoria", ["....ee.e", "...eee..", "...oo...", "..oooo..", "..ooo...", ".ooo....", ".oo.....", "o......."]], ["Libro", [".nnnnnn.", "nwwwwwwn", "nwkkkkwn", "nwwwwwwn", "nwkkkwwn", "nwwwwwwn", "nnnnnnnn", ".NNNNNN."]], ["Mapa", ["pppppppp", "pPppeepp", "ppePpppp", "pppprrpp", "pPpppppp", "ppbbpPpp", "pppppppp", "PPPPPPPP"]], ["Taza de chocolate", ["..w.w...", "...w.w..", "wwwwww..", "wNNNNwww", "wwwwww.w", "wwwwwwww", "wwwwww..", ".wwww..."]], ["Piña", ["...ee...", "..NnN...", ".nNnNn..", ".NnNnN..", ".nNnNn..", "..NnN...", "...n....", "........"]], ["Copo de nieve", ["...c....", "c..c..c.", ".c.c.c..", "..ccc...", "ccccccc.", "..ccc...", ".c.c.c..", "c..c..c."]], ["Bufanda", ["rrrrrrrr", "rwrrwrrw", "rrrrrrrr", "......rr", "......rw", "......rr", "......rw", "......ww"]], ["Acebo", ["..E..E..", ".EeE.Ee.", "EeeEEeeE", ".EeErEe.", "..Errr..", "...rR...", "........", "........"]], ["Corazón", [".rr..rr.", "rwrrrrrr", "rrrrrrrr", "rrrrrrrr", ".rrrrrr.", "..rrrr..", "...rr...", "........"]], ["Regalo dorado", ["..r..r..", "...rr...", "yyyrryyy", "yyyrryyy", "rrrrrrrr", "yyyrryyy", "yyyrryyy", "YYYrrYYY"]]];
+var AV2PAL={"A": "#b8925a", "a": "#8f6c3d", "Q": "#d6b27a", "S": "#f0c8a6", "s": "#dba987", "W": "#f4efe8", "e": "#9a6a3a", "b": "#7a5a3a", "p": "#eab1a0", "l": "#c97a74", "K": "#1e1e22", "k": "#141417", "c": "#2f2f35", "L": "#2a2a30", "J": "#26282e", "j": "#1b1c21", "g": "#363941", "N": "#18181a", "w": "#e9e6df", "V": "#f4f2ec"};
+var ELLA=[".....aAAAAa.....", "...aAAQAAAAAa...", "...AAQAAAAQAA...", "..aAAASSSSSAAa..", "..aASbbSSbbSAa..", "..aASWeSSeWSAa..", "..aApSSssSSpAa..", "..aAsSSllSSsAa..", "..aAAsSSSSsAAa..", "..aAAasSSsaAAa..", "kKKAAKKccKKAAKKk", "KKKAaKKKKKKaAKKK", "KKKaAKKKKKKAaKKK", "KKKkaKKKKKKakKKK", "KKKkKKKKKKKKkKKK", "kKKkKKKKKKKKkKKk", "kKKkLLLLLLLLkKKk", "SSSSkkkkkkkkSSSS", "ssssJJJjjJJJssss", "....JgJjjJgJ....", "....JJJjjJJJ....", "....JJgjjgJJ....", "....JJJjjJJJ....", "....JgJjjJgJ....", "....NwwN.NwwN...", "....VVVV.VVVV..."];
+var ELLAWAVE=[".....aAAAAa.....", "SSSaAAQAAAAAa...", "SSSAAQAAAAQAA...", "SSSAAASSSSSAAa..", "KKkASbbSSbbSAa..", "KKkASWeSSeWSAa..", "KKkApSSssSSpAa..", "KKkAsSSllSSsAa..", "KKkAAsSSSSsAAa..", "KKkAAasSSsaAAa..", "KKkAAKKccKKAAKKk", "KKkAaKKKKKKaAKKK", "...aAKKKKKKAaKKK", "...kaKKKKKKakKKK", "...kKKKKKKKKkKKK", "...kKKKKKKKKkKKk", "...kLLLLLLLLkKKk", "...SkkkkkkkkSSSS", "...sJJJjjJJJssss", "....JgJjjJgJ....", "....JJJjjJJJ....", "....JJgjjgJJ....", "....JJJjjJJJ....", "....JgJjjJgJ....", "....NwwN.NwwN...", "....VVVV.VVVV..."];
+var AVRUN=[["....HhH.HhH.H...", "..HhHHHhHHHhHH..", "..HHHhHHHHhHHH..", "..HHHHhHHhHHHH..", "..HHSHHSSHHSHH..", "..HHSBBSSBBSHH..", "..HHSWESSEWSHH..", "...HSSSssSSSH...", "....SSSMMSSS....", "....sSSSSSSs....", ".....ssSSss.....", "...KKKKssKKKK...", "kKKkKKKKKKKKkKKk", "KKKkKKLKKLKKkKKK", "KKKkKKKKKRRKkKKK", "KKKkKKKKYYYKkKKK", "KKKkKKKKKKKKkKKK", "kKKkKKKKKKKKkKKk", "kKKkKLLLLLLKkKKk", "kKKkLkKKKKkLkKKk", "kKKkLkKKKKkLkKKk", "kKKkkkkkkkkkkKKk", "SSSSkkkkkkkkSSSS", "ssssJJJjjJJJssss", "....JJljjJlJ....", "....lJJjjlJJ....", "....JJJjjJJl....", "....JlJjjJJJ....", "....jJJjjJlJ....", "....JJJjjJJj....", "....NNNNjJJJ....", "....nnnn.NNNN...", ".........nnnn..."], ["....HhH.HhH.H...", "..HhHHHhHHHhHH..", "..HHHhHHHHhHHH..", "..HHHHhHHhHHHH..", "..HHSHHSSHHSHH..", "..HHSBBSSBBSHH..", "..HHSWESSEWSHH..", "...HSSSssSSSH...", "....SSSMMSSS....", "....sSSSSSSs....", ".....ssSSss.....", "...KKKKssKKKK...", "kKKkKKKKKKKKkKKk", "KKKkKKLKKLKKkKKK", "KKKkKKKKKRRKkKKK", "KKKkKKKKYYYKkKKK", "KKKkKKKKKKKKkKKK", "kKKkKKKKKKKKkKKk", "kKKkKLLLLLLKkKKk", "kKKkLkKKKKkLkKKk", "kKKkLkKKKKkLkKKk", "kKKkkkkkkkkkkKKk", "SSSSkkkkkkkkSSSS", "ssssJJJjjJJJssss", "....JlJjjlJJ....", "....JJljjJJl....", "....lJJjjJJJ....", "....JJJjjJlJ....", "....JlJjjJJj....", "....jJJjjJJJ....", "....JJJj.NNN....", "....NNNN.nnnN...", "....nnnn....n..."]];
+var ELLARUN=[[".....aAAAAa.....", "...aAAQAAAAAa...", "...AAQAAAAQAA...", "..aAAASSSSSAAa..", "..aASbbSSbbSAa..", "..aASWeSSeWSAa..", "..aApSSssSSpAa..", "..aAsSSllSSsAa..", "..aAAsSSSSsAAa..", "..aAAasSSsaAAa..", "kKKAAKKccKKAAKKk", "KKKAaKKKKKKaAKKK", "KKKaAKKKKKKAaKKK", "KKKkaKKKKKKakKKK", "KKKkKKKKKKKKkKKK", "kKKkKKKKKKKKkKKk", "kKKkLLLLLLLLkKKk", "SSSSkkkkkkkkSSSS", "ssssJJJjjJJJssss", "....JJJjjJgJ....", "....JJgjjJJJ....", "....JJJjjgJJ....", "....JgJjjJJJ....", "....NwwNjJgJ....", "....VVVV.NwwN...", ".........VVVV..."], [".....aAAAAa.....", "...aAAQAAAAAa...", "...AAQAAAAQAA...", "..aAAASSSSSAAa..", "..aASbbSSbbSAa..", "..aASWeSSeWSAa..", "..aApSSssSSpAa..", "..aAsSSllSSsAa..", "..aAAsSSSSsAAa..", "..aAAasSSsaAAa..", "kKKAAKKccKKAAKKk", "KKKAaKKKKKKaAKKK", "KKKaAKKKKKKAaKKK", "KKKkaKKKKKKakKKK", "KKKkKKKKKKKKkKKK", "kKKkKKKKKKKKkKKk", "kKKkLLLLLLLLkKKk", "SSSSkkkkkkkkSSSS", "ssssJJJjjJJJssss", "....JgJjjJJJ....", "....JJJjjgJJ....", "....JJgjjJJJ....", "....JJJjjJgJ....", "....JgJj.Nww....", "....NwwN.VVVN...", "....VVVV....V..."]];
 function pixURL(rows,pal,crop){
   var x0=crop?crop[0]:0,y0=crop?crop[1]:0,w=crop?crop[2]:rows[0].length,h=crop?crop[3]:rows.length;
   var c=document.createElement('canvas');c.width=w;c.height=h;var x=c.getContext('2d');
@@ -323,6 +337,8 @@ var AV={},ITIMG=[];
 function buildPix(){
   AV.base=pixURL(AVBASE,AVPAL);AV.wave=pixURL(AVWAVE,AVPAL);AV.head=pixURL(AVBASE,AVPAL,[2,0,12,12]);
   ITEMS.forEach(function(it,i){ITIMG[i]=pixURL(it[1],ITPAL)});
+  AV.her=pixURL(ELLA,AV2PAL);AV.herWave=pixURL(ELLAWAVE,AV2PAL);AV.herHead=pixURL(ELLA,AV2PAL,[2,0,12,12]);
+  AV.run=AVRUN.map(function(r){return pixURL(r,AVPAL)});AV.herRun=ELLARUN.map(function(r){return pixURL(r,AV2PAL)});
   HERO='<img class="it pix hero-img" src="'+AV.head+'" alt="">';
 }
 
@@ -418,22 +434,66 @@ function toggleMusic(){MUS.on=!MUS.on;store('adv-music',MUS.on);if(MUS.on)musicS
 function syncNotify(){if(window.Android&&Android.setNotify){try{Android.setNotify(D.notify!==false,String(D.to||''),+D.year||2026)}catch(e){}}}
 
 /* ---------- pantalla de carga y bienvenida ---------- */
+/* ---------- los dos correteando por la hierba ---------- */
+function makeYard(box,sc){
+  if(!box||!AV.base)return;
+  box.innerHTML='';
+  function kid(idle,run,rows,x,dir){var i=new Image();i.className='pix kid';i.alt='';i.src=idle;i.style.width=(16*sc)+'px';i.style.height=(rows*sc)+'px';box.appendChild(i);return {el:i,x:x,y:0,vy:0,dir:dir,w:16*sc,idle:idle,run:run,f:0}}
+  var him=kid(AV.base,AV.run,AVBASE.length,10,1),her=kid(AV.her,AV.herRun,ELLA.length,90,-1);
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function place(c){c.el.style.transform='translate('+Math.round(c.x)+'px,'+Math.round(-c.y)+'px) scaleX('+(c.dir<0?-1:1)+')'}
+  if(rm){var W0=box.clientWidth||300;him.x=W0/2-him.w-4;her.x=W0/2+4;her.dir=-1;place(him);place(her);return}
+  var chaser=him,runner=her,pause=40,t=0,turn=0,grace=60;
+  function jump(c,v){if(c.y===0)c.vy=v||5.2}
+  function heart(x){var h=document.createElement('i');h.className='heart pix';h.style.left=Math.round(x)+'px';box.appendChild(h);setTimeout(function(){h.remove()},1100)}
+  (function frame(){
+    if(!box.isConnected)return;
+    t++;var W=box.clientWidth||300,sp=Math.max(1.2,W/260);
+    if(pause>0){pause--;if(pause===20)jump(runner,6);if(pause===0){runner.dir=runner.x>=chaser.x?1:-1;if((runner.dir>0&&runner.x>W-runner.w-30)||(runner.dir<0&&runner.x<30))runner.dir=-runner.dir;turn=40}}
+    else{
+      if(turn>0)turn--;
+      else{
+        var away=runner.x>=chaser.x?1:-1;
+        if((runner.x<=2&&away<0)||(runner.x>=W-runner.w-2&&away>0)){away=-away;turn=26;jump(runner,6.2)}
+        runner.dir=away;
+      }
+      runner.x+=runner.dir*1.45*sp;
+      if(grace>0){grace--;chaser.x+=chaser.dir*.5*sp}else{chaser.dir=runner.x>chaser.x?1:-1;chaser.x+=chaser.dir*1.75*sp}
+      if(Math.random()<.008)jump(runner);if(Math.random()<.005)jump(chaser);
+      if(grace<=0&&Math.abs(runner.x-chaser.x)<sc*5&&Math.abs(runner.y-chaser.y)<10){
+        pause=55;heart((runner.x+chaser.x)/2+sc*6);
+        var c=chaser;chaser=runner;runner=c;grace=70;
+        him.dir=her.x>him.x?1:-1;her.dir=-him.dir;
+      }
+    }
+    [him,her].forEach(function(c){
+      c.x=Math.max(0,Math.min(W-c.w,c.x));
+      if(c.y>0||c.vy>0){c.y+=c.vy;c.vy-=.42;if(c.y<=0){c.y=0;c.vy=0}}
+      if(pause<=0&&t%7===0)c.f^=1;
+      var src=pause>0?c.idle:c.run[c.f];if(c.el.getAttribute('src')!==src)c.el.src=src;
+      place(c);
+    });
+    requestAnimationFrame(frame);
+  })();
+}
+
 function splash(){
   try{if(sessionStorage.getItem('adv-nosplash')){sessionStorage.removeItem('adv-nosplash');return}}catch(e){}
   if(D.splash===false||!AV.base)return;
   var sk=SKIES[(!D.sky||D.sky==='auto')?skyNow():D.sky]||SKIES.dia,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var tips=['Generando el mundo…','Colocando bloques…','Escondiendo regalos…','Encendiendo antorchas…','Casi listo…'];
+  var tips=['Generando el mundo…','Plantando la hierba…','Colocando 24 bloques…','Escondiendo regalos…','Encendiendo antorchas…','Afinando la música…','Casi listo…'];
   document.body.insertAdjacentHTML('beforeend','<div id="spl" class="spl" style="background:linear-gradient('+sk[1]+','+sk[2]+')">'+
-    '<div class="sp-load" id="spL"><div class="sp-scene"><img class="pix sp-av" src="'+AV.base+'" alt=""><img class="pix sp-pick" src="'+ITIMG[0]+'" alt=""><div class="sp-blk pix" style="background-image:url('+TEX.piedra+')"><span class="crack pix" id="spC"></span></div></div>'+
-    '<div class="sp-ground pix" style="background-image:url('+TEX.hierba+')"></div><p class="sp-tip" id="spT">'+tips[0]+'</p><div class="sp-bar"><i id="spB"></i></div></div>'+
-    '<div class="sp-wel" id="spW"><img class="pix sp-big" id="spAv" src="'+AV.wave+'" alt=""><h2>¡Hola, '+esc(D.to||'')+'!</h2><p>Bienvenido a tu calendario de adviento.</p>'+(D.intro?'<p class="sp-sub">'+String(D.intro).split('\n').map(esc).join('<br>')+'</p>':'')+'<button class="primary big-btn" id="spGo">Entrar</button></div></div>');
-  var spl=$('#spl'),t0=performance.now(),dur=rm?600:3000,hit=0,ti=0,wf=0,wv;
+    '<div class="sp-load" id="spL"><div class="sp-yard" id="spY"></div><div class="sp-ground pix" style="background-image:url('+TEX.hierba+')"></div><p class="sp-tip" id="spT">'+tips[0]+'</p><div class="sp-bar"><i id="spB"></i></div></div>'+
+    '<div class="sp-wel" id="spW"><div class="sp-pair"><img class="pix sp-big" id="spAv" src="'+AV.wave+'" alt=""><img class="pix sp-big her" id="spAv2" src="'+AV.herWave+'" alt=""></div><h2>¡Hola, '+esc(D.to||'')+'!</h2><p>Bienvenido a tu calendario de adviento.</p>'+(D.intro?'<p class="sp-sub">'+String(D.intro).split('\n').map(esc).join('<br>')+'</p>':'')+'<button class="primary big-btn" id="spGo">Entrar</button></div></div>');
+  makeYard($('#spY'),3);
+  if(!rm){var fh='';for(var q=0;q<26;q++)fh+='<i class="flake" style="left:'+(Math.random()*100)+'%;--dx:'+((Math.random()-.5)*60)+'px;animation-duration:'+(6+Math.random()*8)+'s;animation-delay:-'+(Math.random()*12)+'s"></i>';$('#spl').insertAdjacentHTML('afterbegin',fh)}
+  var spl=$('#spl'),t0=performance.now(),dur=rm?800:7000,ti=0,wf=0,wv;
   var iv=setInterval(function(){
     var k=Math.min(1,(performance.now()-t0)/dur);$('#spB').style.width=(k*100)+'%';
-    if(Math.floor(k*tips.length)!==ti&&k<1){ti=Math.floor(k*tips.length);$('#spT').textContent=tips[ti]}
-    if(k>=1){clearInterval(iv);clearInterval(hv);$('#spL').classList.add('fade');setTimeout(function(){$('#spL').style.display='none';$('#spW').classList.add('show');wv=setInterval(function(){wf^=1;var a=$('#spAv');if(a)a.src=wf?AV.base:AV.wave},450)},rm?0:600)}
+    var n=Math.min(tips.length-1,Math.floor(k*tips.length));if(n!==ti){ti=n;$('#spT').textContent=tips[ti]}
+    if(k>=1){clearInterval(iv);$('#spL').classList.add('fade');setTimeout(function(){$('#spL').style.display='none';$('#spY').innerHTML='';$('#spW').classList.add('show');
+      wv=setInterval(function(){wf^=1;var a=$('#spAv'),b=$('#spAv2');if(a)a.src=wf?AV.base:AV.wave;if(b)b.src=wf?AV.herWave:AV.her},450)},rm?0:600)}
   },60);
-  var hv=setInterval(function(){hit=(hit+1)%4;var c=$('#spC');if(c)c.style.backgroundImage=hit?'url('+CRACK[hit-1]+')':''},500);
   $('#spGo').onclick=function(){clearInterval(wv);musicStart();spl.classList.add('out');setTimeout(function(){spl.remove()},rm?0:900)};
 }
 
@@ -468,6 +528,8 @@ function render(){
   var t=todayStr(),first=dayStr(1),last=dayStr(24),s;
   if(t<first){var n=daysBetween(t,first);s=n===1?'El primer bloque se abre <b>mañana</b>':'Faltan <b>'+n+' días</b> para el primer bloque'}
   else if(t<=last){s='Hoy toca picar el bloque <b>'+(+t.slice(8))+'</b>'}
+  var np=0;for(var q=1;q<=24;q++)if(unlocked(q)&&!opened[q]&&t!==dayStr(q))np++;
+  if(np&&t>=first)s+='<br>Te '+(np===1?'queda <b>1 bloque pendiente</b>':'quedan <b>'+np+' bloques pendientes</b>')+' de otros días';
   else s='<b>¡Todos los bloques abiertos!</b>';
   $('#status').innerHTML=s;
   var ed=mode==='edit'&&canEdit();
@@ -475,8 +537,9 @@ function render(){
   $('#tools').insertAdjacentHTML('beforeend','<button id="bInv" class="sec">Inventario '+invCount()+'/24</button><button id="bMus" class="sec">Música: '+(MUS.on?'sí':'no')+'</button>');
   $('#grid').innerHTML=ORDER.map(function(n){
     var d=D.doors[n]||{},u=unlocked(n),isT=t===dayStr(n),filled=d.title||d.text||d.photo||d.vale||d.link;
-    var cls=['door',n===24?'big':'',ed?'edit':'',ed&&!filled?'empty':'',!ed&&!u?'locked':'',!ed&&isT?'today':'',!ed&&opened[n]&&u?'open':''].join(' ');
-    var tag=ed?(d.title||'vacío'):(isT?'¡hoy!':(u?'':''));
+    var pend=!ed&&u&&!isT&&!opened[n];
+    var cls=['door',n===24?'big':'',ed?'edit':'',ed&&!filled?'empty':'',!ed&&!u?'locked':'',!ed&&isT?'today':'',!ed&&opened[n]&&u?'open':'',pend?'pending':''].join(' ');
+    var tag=ed?(d.title||'vacío'):(isT?'¡hoy!':(pend?'¡pendiente!':''));
     return '<button class="'+cls+'" data-n="'+n+'" aria-label="Bloque '+n+'">'+ITEM+'<span class="face pix" style="background-image:url('+TEX[matOf(n)]+')"><span class="num">'+n+'</span><span class="tag">'+esc(tag)+'</span></span><span class="crack pix"></span></button>';
   }).join('');
   $('#note').textContent=(FINAL||SIM.on)?'':ed?'Toca un bloque para escribir lo que hay dentro.':(D.sample&&canEdit()?'Contenido de ejemplo: pulsa Editar para cambiarlo todo.':'');
@@ -496,7 +559,7 @@ function showDoor(n,draft){
   var d=draft||D.doors[n]||{},u=unlocked(n),date=n+' de diciembre';
   if(!u&&!canEdit()){
     var k=daysBetween(todayStr(),dayStr(n));
-    openSheet('<div class="ups"><img class="pix" src="'+AV.head+'" alt=""><div><p class="kick">'+date+'</p><h2>¡Ups! Este día todavía no está desbloqueado</h2></div></div><p class="lockmsg">El bloque '+n+' se abre el '+date+' a las 00:00. '+(k===1?'¡Solo falta un día!':'Faltan '+k+' días.')+' Mientras tanto, pica el de hoy.</p><div class="row"><button class="primary" data-close>Vale</button></div>');
+    openSheet('<div class="ups"><img class="pix" src="'+AV.herHead+'" alt=""><div><p class="kick">'+date+'</p><h2>¡Ups! Este día todavía no está desbloqueado</h2></div></div><p class="lockmsg">El bloque '+n+' se abre el '+date+' a las 00:00. '+(k===1?'¡Solo falta un día!':'Faltan '+k+' días.')+' Mientras tanto, pica el de hoy.</p><div class="row"><button class="primary" data-close>Vale</button></div>');
     var up=$('.ups img');if(up){up.classList.remove('shake');void up.offsetWidth;up.classList.add('shake')}
     beep([300,200],'square');
     return;
@@ -1204,7 +1267,7 @@ function snow(){
   sky.insertAdjacentHTML('beforeend',h);
 }
 
-buildTex();buildPix();render();snow();syncNotify();splash();
+buildTex();buildPix();render();snow();$('#sky').insertAdjacentHTML('beforeend','<div class="yard" id="yard"></div>');makeYard($('#yard'),2);syncNotify();splash();
 setInterval(function(){if(!$('#ov').classList.contains('show'))render()},60000);
 if(WEB){
   Promise.all([window.claude.use('user'),window.claude.use('artifact')]).then(function(r){

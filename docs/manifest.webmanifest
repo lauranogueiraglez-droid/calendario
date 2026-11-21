@@ -1,6 +1,6 @@
 {
  "name": "Calendario de Adviento",
- "short_name": "Adviento",
+ "short_name": "Calendario de Adviento",
  "start_url": "./",
  "display": "standalone",
  "background_color": "#1b130e",
