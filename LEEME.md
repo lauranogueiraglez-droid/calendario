@@ -19,7 +19,7 @@ En esta carpeta hay dos versiones del mismo calendario:
 3. Pasa el APK al móvil, ábrelo y acepta «instalar apps de origen desconocido».
 4. La primera vez que se abre, la app pide permiso para enviar notificaciones: hay que **permitirlo**.
 
-Avisos: cada mañana a las 9:00 (hora de España), del 1 al 24 de diciembre, llega «¡Bloque X desbloqueado!». En Ajustes se pueden apagar, y el botón «Probar aviso» manda uno al momento para comprobarlo.
+Avisos: cada mañana a las 10:30 (hora de España), del 1 al 24 de diciembre, llega «¡Bloque X desbloqueado!». En Ajustes se pueden apagar, y el botón «Probar aviso» manda uno al momento para comprobarlo.
 
 También puedes abrir la carpeta con Android Studio (*File › Open*) y hacer *Build › Build APK(s)*.
 
@@ -29,7 +29,7 @@ También puedes abrir la carpeta con Android Studio (*File › Open*) y hacer *B
 2. En «Branch» elige `main` y la carpeta `/docs`, y pulsa **Save**.
 3. Al cabo de un minuto te dará una dirección del tipo `https://tu-usuario.github.io/nombre-del-repo/`.
 4. Izan la abre en **Safari** y pulsa **Compartir › Añadir a pantalla de inicio**. Le queda un icono con su avatar y se abre a pantalla completa.
-5. **Avisos en iPhone:** abajo del todo de la página está «Activar los avisos de cada mañana en mi calendario». Al tocarlo se añaden 24 recordatorios a su app Calendario, a las 9:00 de cada día.
+5. **Avisos en iPhone:** abajo del todo de la página está «Activar los avisos de cada mañana en mi calendario». Al tocarlo se añaden 24 recordatorios a su app Calendario, a las 10:30 de cada día.
 
 Importante: la versión de iPhone muestra el contenido que lleve `docs/index.html`. Cuando termines de rellenar el calendario, pásaselo a Claude para que prepare la versión final con todo dentro, o usa «Enviar» y que Izan lo importe con «Importar un calendario».
 

@@ -3,7 +3,7 @@ VERSION:2.0
 PRODID:-//Adviento//ES
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Calendario de Adviento
+X-WR-CALNAME:Adviento
 BEGIN:VTIMEZONE
 TZID:Europe/Madrid
 BEGIN:STANDARD
@@ -24,8 +24,8 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:adviento-2026-1@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261201T090000
-DTEND;TZID=Europe/Madrid:20261201T091500
+DTSTART;TZID=Europe/Madrid:20261201T103000
+DTEND;TZID=Europe/Madrid:20261201T104500
 SUMMARY:¡Ya puedes picar el bloque 1!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -37,8 +37,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-2@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261202T090000
-DTEND;TZID=Europe/Madrid:20261202T091500
+DTSTART;TZID=Europe/Madrid:20261202T103000
+DTEND;TZID=Europe/Madrid:20261202T104500
 SUMMARY:¡Ya puedes picar el bloque 2!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -50,8 +50,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-3@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261203T090000
-DTEND;TZID=Europe/Madrid:20261203T091500
+DTSTART;TZID=Europe/Madrid:20261203T103000
+DTEND;TZID=Europe/Madrid:20261203T104500
 SUMMARY:¡Ya puedes picar el bloque 3!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -63,8 +63,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-4@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261204T090000
-DTEND;TZID=Europe/Madrid:20261204T091500
+DTSTART;TZID=Europe/Madrid:20261204T103000
+DTEND;TZID=Europe/Madrid:20261204T104500
 SUMMARY:¡Ya puedes picar el bloque 4!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -76,8 +76,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-5@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261205T090000
-DTEND;TZID=Europe/Madrid:20261205T091500
+DTSTART;TZID=Europe/Madrid:20261205T103000
+DTEND;TZID=Europe/Madrid:20261205T104500
 SUMMARY:¡Ya puedes picar el bloque 5!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -89,8 +89,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-6@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261206T090000
-DTEND;TZID=Europe/Madrid:20261206T091500
+DTSTART;TZID=Europe/Madrid:20261206T103000
+DTEND;TZID=Europe/Madrid:20261206T104500
 SUMMARY:¡Ya puedes picar el bloque 6!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -102,8 +102,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-7@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261207T090000
-DTEND;TZID=Europe/Madrid:20261207T091500
+DTSTART;TZID=Europe/Madrid:20261207T103000
+DTEND;TZID=Europe/Madrid:20261207T104500
 SUMMARY:¡Ya puedes picar el bloque 7!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -115,8 +115,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-8@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261208T090000
-DTEND;TZID=Europe/Madrid:20261208T091500
+DTSTART;TZID=Europe/Madrid:20261208T103000
+DTEND;TZID=Europe/Madrid:20261208T104500
 SUMMARY:¡Ya puedes picar el bloque 8!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -128,8 +128,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-9@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261209T090000
-DTEND;TZID=Europe/Madrid:20261209T091500
+DTSTART;TZID=Europe/Madrid:20261209T103000
+DTEND;TZID=Europe/Madrid:20261209T104500
 SUMMARY:¡Ya puedes picar el bloque 9!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -141,8 +141,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-10@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261210T090000
-DTEND;TZID=Europe/Madrid:20261210T091500
+DTSTART;TZID=Europe/Madrid:20261210T103000
+DTEND;TZID=Europe/Madrid:20261210T104500
 SUMMARY:¡Ya puedes picar el bloque 10!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -154,8 +154,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-11@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261211T090000
-DTEND;TZID=Europe/Madrid:20261211T091500
+DTSTART;TZID=Europe/Madrid:20261211T103000
+DTEND;TZID=Europe/Madrid:20261211T104500
 SUMMARY:¡Ya puedes picar el bloque 11!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -167,8 +167,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-12@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261212T090000
-DTEND;TZID=Europe/Madrid:20261212T091500
+DTSTART;TZID=Europe/Madrid:20261212T103000
+DTEND;TZID=Europe/Madrid:20261212T104500
 SUMMARY:¡Ya puedes picar el bloque 12!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -180,8 +180,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-13@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261213T090000
-DTEND;TZID=Europe/Madrid:20261213T091500
+DTSTART;TZID=Europe/Madrid:20261213T103000
+DTEND;TZID=Europe/Madrid:20261213T104500
 SUMMARY:¡Ya puedes picar el bloque 13!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -193,8 +193,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-14@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261214T090000
-DTEND;TZID=Europe/Madrid:20261214T091500
+DTSTART;TZID=Europe/Madrid:20261214T103000
+DTEND;TZID=Europe/Madrid:20261214T104500
 SUMMARY:¡Ya puedes picar el bloque 14!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -206,8 +206,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-15@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261215T090000
-DTEND;TZID=Europe/Madrid:20261215T091500
+DTSTART;TZID=Europe/Madrid:20261215T103000
+DTEND;TZID=Europe/Madrid:20261215T104500
 SUMMARY:¡Ya puedes picar el bloque 15!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -219,8 +219,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-16@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261216T090000
-DTEND;TZID=Europe/Madrid:20261216T091500
+DTSTART;TZID=Europe/Madrid:20261216T103000
+DTEND;TZID=Europe/Madrid:20261216T104500
 SUMMARY:¡Ya puedes picar el bloque 16!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -232,8 +232,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-17@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261217T090000
-DTEND;TZID=Europe/Madrid:20261217T091500
+DTSTART;TZID=Europe/Madrid:20261217T103000
+DTEND;TZID=Europe/Madrid:20261217T104500
 SUMMARY:¡Ya puedes picar el bloque 17!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -245,8 +245,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-18@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261218T090000
-DTEND;TZID=Europe/Madrid:20261218T091500
+DTSTART;TZID=Europe/Madrid:20261218T103000
+DTEND;TZID=Europe/Madrid:20261218T104500
 SUMMARY:¡Ya puedes picar el bloque 18!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -258,8 +258,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-19@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261219T090000
-DTEND;TZID=Europe/Madrid:20261219T091500
+DTSTART;TZID=Europe/Madrid:20261219T103000
+DTEND;TZID=Europe/Madrid:20261219T104500
 SUMMARY:¡Ya puedes picar el bloque 19!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -271,8 +271,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-20@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261220T090000
-DTEND;TZID=Europe/Madrid:20261220T091500
+DTSTART;TZID=Europe/Madrid:20261220T103000
+DTEND;TZID=Europe/Madrid:20261220T104500
 SUMMARY:¡Ya puedes picar el bloque 20!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -284,8 +284,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-21@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261221T090000
-DTEND;TZID=Europe/Madrid:20261221T091500
+DTSTART;TZID=Europe/Madrid:20261221T103000
+DTEND;TZID=Europe/Madrid:20261221T104500
 SUMMARY:¡Ya puedes picar el bloque 21!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -297,8 +297,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-22@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261222T090000
-DTEND;TZID=Europe/Madrid:20261222T091500
+DTSTART;TZID=Europe/Madrid:20261222T103000
+DTEND;TZID=Europe/Madrid:20261222T104500
 SUMMARY:¡Ya puedes picar el bloque 22!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -310,8 +310,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-23@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261223T090000
-DTEND;TZID=Europe/Madrid:20261223T091500
+DTSTART;TZID=Europe/Madrid:20261223T103000
+DTEND;TZID=Europe/Madrid:20261223T104500
 SUMMARY:¡Ya puedes picar el bloque 23!
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM
@@ -323,8 +323,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adviento-2026-24@calendario
 DTSTAMP:20261121T000000Z
-DTSTART;TZID=Europe/Madrid:20261224T090000
-DTEND;TZID=Europe/Madrid:20261224T091500
+DTSTART;TZID=Europe/Madrid:20261224T103000
+DTEND;TZID=Europe/Madrid:20261224T104500
 SUMMARY:¡Último bloque! Hoy es Nochebuena
 DESCRIPTION:Abre tu calendario de adviento y supera el minijuego del día.
 BEGIN:VALARM

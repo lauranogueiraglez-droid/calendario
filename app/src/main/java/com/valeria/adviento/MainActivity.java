@@ -1,11 +1,14 @@
 package com.valeria.adviento;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.net.Uri;
 import android.os.Bundle;
 import android.webkit.JavascriptInterface;
@@ -24,6 +27,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
@@ -167,7 +171,56 @@ public class MainActivity extends Activity {
         });
     }
 
+    private void jsToast(String msg) {
+        runOnUiThread(() -> web.evaluateJavascript("window.appToast && appToast(" + JSONObject.quote(msg) + ")", null));
+    }
+
     private class Bridge {
+        @JavascriptInterface
+        public void setStatusBar(String hex) {
+            runOnUiThread(() -> {
+                try {
+                    getWindow().setStatusBarColor(android.graphics.Color.parseColor(hex));
+                } catch (Exception ignored) { }
+            });
+        }
+
+        /** Guarda un vale (JPG) en la galería, en Imágenes/Adviento. */
+        @JavascriptInterface
+        public void saveImage(String b64, String name) {
+            try {
+                byte[] data = Base64.decode(b64, Base64.DEFAULT);
+                if (Build.VERSION.SDK_INT >= 29) {
+                    ContentValues v = new ContentValues();
+                    v.put(MediaStore.Images.Media.DISPLAY_NAME, name);
+                    v.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
+                    v.put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/Adviento");
+                    Uri uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, v);
+                    if (uri == null) throw new Exception("sin uri");
+                    try (OutputStream o = getContentResolver().openOutputStream(uri)) {
+                        if (o == null) throw new Exception("sin salida");
+                        o.write(data);
+                    }
+                    jsToast("Vale guardado en la galería");
+                } else {
+                    File dir = new File(getCacheDir(), "shared");
+                    if (!dir.exists()) dir.mkdirs();
+                    File f = new File(dir, name.replaceAll("[^A-Za-z0-9._-]", "_"));
+                    try (FileOutputStream o = new FileOutputStream(f)) {
+                        o.write(data);
+                    }
+                    Uri u = FileProvider.getUriForFile(MainActivity.this, getPackageName() + ".files", f);
+                    Intent i = new Intent(Intent.ACTION_SEND);
+                    i.setType("image/jpeg");
+                    i.putExtra(Intent.EXTRA_STREAM, u);
+                    i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    startActivity(Intent.createChooser(i, "Guardar vale"));
+                }
+            } catch (Exception e) {
+                jsToast("No se pudo guardar el vale");
+            }
+        }
+
         @JavascriptInterface
         public void setNotify(boolean on, String name, int year) {
             SharedPreferences p = getSharedPreferences(Notify.PREFS, Context.MODE_PRIVATE);

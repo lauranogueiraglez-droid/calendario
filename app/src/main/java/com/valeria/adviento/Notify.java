@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
-/** Aviso diario a las 9:00 (hora de España) del 1 al 24 de diciembre. */
+/** Aviso diario a las 10:30 (hora de España) del 1 al 24 de diciembre. */
 final class Notify {
     static final String CHANNEL = "bloques";
     static final String PREFS = "adviento";
@@ -39,7 +39,7 @@ final class Notify {
         SharedPreferences p = c.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
         if (!p.getBoolean("on", true)) return;
         ZonedDateTime now = ZonedDateTime.now(ZONE);
-        ZonedDateTime t = now.withHour(9).withMinute(0).withSecond(0).withNano(0);
+        ZonedDateTime t = now.withHour(10).withMinute(30).withSecond(0).withNano(0);
         if (!t.isAfter(now)) t = t.plusDays(1);
         am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, t.toInstant().toEpochMilli(), pi);
     }
